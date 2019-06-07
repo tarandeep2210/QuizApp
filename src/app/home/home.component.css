@@ -1,0 +1,27 @@
+button{
+    margin:10px;
+}
+
+.incorrect{
+    color:red;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.correct{
+    color: black;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.notSelected{
+    color: rgb(255, 153, 0);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+input[type="radio"]{
+    margin: 10px;
+}
+

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+        <div style="padding-top: 10px;">
+            <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+              <ol type="1">
+              <li *ngFor="let question of questions">
+                <div [ngClass] = "form.submitted? check? question.selected !== question.correctAns? 'incorrect' :'correct' : question.selected? 'correct' : 'notSelected' : 'correct'"> {{ question.questionDesc }} </div>
+               <!-- <div [ngClass] = " form.submitted && check ? question.selected ? question.selected !== question.correctAns? 'incorrect' :'correct': 'notSelected' : 'correct' ">  </div> -->
+                <div *ngFor="let option of question.options">
+                
+                    <input type="radio" id={{question.questionId}} name="{{question.questionId}}" value="{{option}}" [(ngModel)]="question.selected">{{option}}<br>
+        
+                </div>
+              </li>
+            </ol>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-secondary" (click)="clear(form)">Clear</button>
+            </form>
+          </div>
+    </div>
+    <div class="col-md-6">
+      <div id="chartContainer" style="height: 370px; width: 100%; padding-top: 20px"></div>
+    </div>
+  
+</div>  
+</div>
